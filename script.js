@@ -1,4 +1,6 @@
 "use strict";
+
+// taking user input
 function userInput() {
   //takes user's input
   let input = prompt(`Rock, Paper, Scissor. Which one do you choose?`);
@@ -12,9 +14,21 @@ function userInput() {
       `Wrong input. Please choose between Rock, Paper and Scissors.`
     );
   }
-  console.log(
-    `You have chosen ${input.charAt(0).toLocaleUpperCase() + input.slice(1)}!`
-  );
+  return `You have chosen ${
+    input.charAt(0).toLocaleUpperCase() + input.slice(1)
+  }!`;
+}
+let userChoice = userInput();
+console.log(userChoice);
+
+//taking computer's input
+function opponentChoice() {
+  const options = ["Rock", "Paper", "Scissor"];
+  const choice = Math.floor(Math.random() * options.length);
+  return options[choice];
 }
 
-userInput();
+const robotChoice = opponentChoice();
+console.log(`Your opponent has chosen ${robotChoice}!`);
+
+//userChoice and robotChoice is found
