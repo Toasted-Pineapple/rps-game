@@ -16,7 +16,6 @@ function userInput() {
   }
   return input.charAt(0).toLocaleUpperCase() + input.slice(1);
 }
-const userChoice = userInput();
 
 //taking computer's input
 function opponentChoice() {
@@ -24,34 +23,37 @@ function opponentChoice() {
   const choice = Math.floor(Math.random() * options.length);
   return options[choice];
 }
-const robotChoice = opponentChoice();
-
-//userChoice and robotChoice is found
-alert(`You chose ${userChoice}!`);
-alert(`Your opponent chose ${robotChoice}!`);
 
 function checkWinner() {
   let score = 0;
   let opponentScore = 0;
-  if (userChoice == `Rock` && robotChoice == `Scissor`) {
-    alert(`That Rock absolutely demolished the Scissor! YOU WON THE GAME!!!`);
-    score++;
-    opponentScore--;
-  } else if (userChoice == `Paper` && robotChoice == `Rock`) {
-    alert(`Rock is no match for Paper! YOU WON THE GAME!!!`);
-    score++;
-    opponentScore--;
-  } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
-    alert(`That Scissor just slashed the Paper into half! YOU WON THE GAME! `);
-    score++;
-    opponentScore--;
-  } else if (userChoice == robotChoice) {
-    alert(`You both chose the same, what a coincidence!`);
-  } else {
-    alert(`Your opponent overpowered you massively! Better luck next time!`);
-    score--;
-    opponentScore++;
-    console.log(score + ":" + opponentScore);
+
+  for (let i = 1; i <= 3; i++) {
+    const userChoice = userInput();
+    const robotChoice = opponentChoice();
+
+    if (userChoice == `Rock` && robotChoice == `Scissor`) {
+      alert(`That Rock absolutely demolished the Scissor! YOU WON THE GAME!!!`);
+      score++;
+      opponentScore--;
+    } else if (userChoice == `Paper` && robotChoice == `Rock`) {
+      alert(`Rock is no match for Paper! YOU WON THE GAME!!!`);
+      score++;
+      opponentScore--;
+    } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
+      alert(
+        `That Scissor just slashed the Paper into half! YOU WON THE GAME! `
+      );
+      score++;
+      opponentScore--;
+    } else if (userChoice == robotChoice) {
+      alert(`You both chose the same, what a coincidence!`);
+    } else {
+      alert(`Your opponent overpowered you massively! Better luck next time!`);
+      score--;
+      opponentScore++;
+      console.log(score + ":" + opponentScore);
+    }
   }
 }
 checkWinner();
