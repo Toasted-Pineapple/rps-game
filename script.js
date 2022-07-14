@@ -32,28 +32,52 @@ function checkWinner() {
     const userChoice = userInput();
     const robotChoice = opponentChoice();
 
+    //Need Attention: Need the score to remain 0 instead of going negative if the score is already 0.
     if (userChoice == `Rock` && robotChoice == `Scissor`) {
-      alert(`That Rock absolutely demolished the Scissor! YOU WON THE GAME!!!`);
       score++;
       opponentScore--;
-    } else if (userChoice == `Paper` && robotChoice == `Rock`) {
-      alert(`Rock is no match for Paper! YOU WON THE GAME!!!`);
-      score++;
-      opponentScore--;
-    } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
+      alert(`You chose ${userChoice}!`);
+      alert(`Your opponent chose ${robotChoice}!`);
       alert(
-        `That Scissor just slashed the Paper into half! YOU WON THE GAME! `
+        `That Rock absolutely demolished the Scissor! YOU WON THE GAME!!! \n The score is now ${score}:${opponentScore}`
       );
+    } else if (userChoice == `Paper` && robotChoice == `Rock`) {
       score++;
       opponentScore--;
+      alert(`You chose ${userChoice}!`);
+      alert(`Your opponent chose ${robotChoice}!`);
+      alert(
+        `Rock is no match for Paper! YOU WON THE GAME!!! \n The score is now ${score}:${opponentScore}`
+      );
+    } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
+      score++;
+      opponentScore--;
+      alert(`You chose ${userChoice}!`);
+      alert(`Your opponent chose ${robotChoice}!`);
+      alert(
+        `That Scissor just slashed the Paper into half! YOU WON THE GAME! \n The score is now ${score}:${opponentScore} `
+      );
     } else if (userChoice == robotChoice) {
-      alert(`You both chose the same, what a coincidence!`);
+      alert(`You chose ${userChoice}!`);
+      alert(`Your opponent chose ${robotChoice}!`);
+      alert(
+        `You both chose the same, what a coincidence! \n The score is now ${score}:${opponentScore}`
+      );
     } else {
-      alert(`Your opponent overpowered you massively! Better luck next time!`);
       score--;
       opponentScore++;
-      console.log(score + ":" + opponentScore);
+      alert(`You chose ${userChoice}!`);
+      alert(`Your opponent chose ${robotChoice}!`);
+      alert(
+        `Your opponent overpowered you massively! Better luck next time! \n The score is now ${score}:${opponentScore}`
+      );
     }
+  }
+
+  if (score > opponentScore) {
+    alert(`You did a great job. You absolutely demolished your opponent!`);
+  } else {
+    alert(`Unfortunately, you lost the game. Better luck next time!`);
   }
 }
 checkWinner();
