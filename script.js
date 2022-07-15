@@ -34,7 +34,6 @@ function checkWinner() {
 
     if (userChoice == `Rock` && robotChoice == `Scissor`) {
       score++;
-      opponentScore == 0 ? (opponentScore = 0) : opponentScore--;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
@@ -42,7 +41,6 @@ function checkWinner() {
       );
     } else if (userChoice == `Paper` && robotChoice == `Rock`) {
       score++;
-      opponentScore == 0 ? (opponentScore = 0) : opponentScore--;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
@@ -50,7 +48,6 @@ function checkWinner() {
       );
     } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
       score++;
-      opponentScore == 0 ? (opponentScore = 0) : opponentScore--;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
@@ -63,7 +60,6 @@ function checkWinner() {
         `You both chose the same, what a coincidence! \n Your score is now: ${score} and your opponent's score is now: ${opponentScore}`
       );
     } else {
-      score == 0 ? (score = 0) : score--;
       opponentScore++;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
