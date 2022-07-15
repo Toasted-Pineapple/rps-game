@@ -32,10 +32,9 @@ function checkWinner() {
     const userChoice = userInput();
     const robotChoice = opponentChoice();
 
-    //Need Attention: Need the score to remain 0 instead of going negative if the score is already 0.
     if (userChoice == `Rock` && robotChoice == `Scissor`) {
       score++;
-      opponentScore--;
+      opponentScore == 0 ? (opponentScore = 0) : opponentScore--;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
@@ -43,7 +42,7 @@ function checkWinner() {
       );
     } else if (userChoice == `Paper` && robotChoice == `Rock`) {
       score++;
-      opponentScore--;
+      opponentScore == 0 ? (opponentScore = 0) : opponentScore--;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
@@ -51,7 +50,7 @@ function checkWinner() {
       );
     } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
       score++;
-      opponentScore--;
+      opponentScore == 0 ? (opponentScore = 0) : opponentScore--;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
@@ -64,7 +63,7 @@ function checkWinner() {
         `You both chose the same, what a coincidence! \n The score is now ${score}:${opponentScore}`
       );
     } else {
-      score--;
+      score == 0 ? (score = 0) : score--;
       opponentScore++;
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
