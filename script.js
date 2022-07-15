@@ -75,6 +75,8 @@ function checkWinner() {
 
   if (score > opponentScore) {
     alert(`You did a great job. You absolutely demolished your opponent!`);
+  } else if (score === opponentScore) {
+    alert(`You both scored the same! at least, it's not a defeat!`);
   } else {
     alert(`Unfortunately, you lost the game. Better luck next time!`);
   }
