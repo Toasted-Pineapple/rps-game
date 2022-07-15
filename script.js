@@ -1,13 +1,9 @@
 "use strict";
 
-alert(
-  `Welcome to the game of Rock, Paper & Scissor. Compete and win against your opponent for the pride! Best of 3 match wins the game.`
-);
 // taking user input
 function userInput() {
   //takes user's input
   let input = prompt(`Rock, Paper, Scissor. Which one do you choose?`);
-
   //checks if the input is valid
   while (
     ["Rock", "Paper", "Scissor", "rock", "paper", "scissor"].indexOf(input) ==
@@ -27,14 +23,15 @@ function opponentChoice() {
   return options[choice];
 }
 
-function checkWinner() {
+function playGame() {
   let score = 0;
   let opponentScore = 0;
-
+  alert(
+    `Welcome to the game of Rock, Paper & Scissor. Compete and win against your opponent for the pride! Best of 3 match wins the game.`
+  );
   for (let i = 1; i <= 3; i++) {
     const userChoice = userInput();
     const robotChoice = opponentChoice();
-
     if (userChoice == `Rock` && robotChoice == `Scissor`) {
       score++;
       alert(`You chose ${userChoice}!`);
@@ -71,7 +68,6 @@ function checkWinner() {
       );
     }
   }
-
   if (score > opponentScore) {
     alert(`You did a great job. You absolutely demolished your opponent!`);
   } else if (score === opponentScore) {
@@ -80,4 +76,5 @@ function checkWinner() {
     alert(`Unfortunately, you lost the game. Better luck next time!`);
   }
 }
-checkWinner();
+
+playGame();
