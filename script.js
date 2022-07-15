@@ -1,5 +1,8 @@
 "use strict";
 
+alert(
+  `Welcome to the game of Rock, Paper & Scissor. Compete and win against your opponent for the pride! Best of 3 match wins the game.`
+);
 // taking user input
 function userInput() {
   //takes user's input
