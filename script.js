@@ -38,7 +38,7 @@ function checkWinner() {
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
-        `That Rock absolutely demolished the Scissor! YOU WON THE GAME!!! \n The score is now ${score}:${opponentScore}`
+        `That Rock absolutely demolished the Scissor! YOU WON THE GAME!!! \n Your score is now: ${score} and your opponent's score is now: ${opponentScore}`
       );
     } else if (userChoice == `Paper` && robotChoice == `Rock`) {
       score++;
@@ -46,7 +46,7 @@ function checkWinner() {
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
-        `Rock is no match for Paper! YOU WON THE GAME!!! \n The score is now ${score}:${opponentScore}`
+        `Rock is no match for Paper! YOU WON THE GAME!!! \n Your score is now: ${score} and your opponent's score is now: ${opponentScore}`
       );
     } else if (userChoice == `Scissor` && robotChoice == `Paper`) {
       score++;
@@ -54,13 +54,13 @@ function checkWinner() {
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
-        `That Scissor just slashed the Paper into half! YOU WON THE GAME! \n The score is now ${score}:${opponentScore} `
+        `That Scissor just slashed the Paper into half! YOU WON THE GAME! \n Your score is now: ${score} and your opponent's score is now: ${opponentScore} `
       );
     } else if (userChoice == robotChoice) {
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
-        `You both chose the same, what a coincidence! \n The score is now ${score}:${opponentScore}`
+        `You both chose the same, what a coincidence! \n Your score is now: ${score} and your opponent's score is now: ${opponentScore}`
       );
     } else {
       score == 0 ? (score = 0) : score--;
@@ -68,7 +68,7 @@ function checkWinner() {
       alert(`You chose ${userChoice}!`);
       alert(`Your opponent chose ${robotChoice}!`);
       alert(
-        `Your opponent overpowered you massively! Better luck next time! \n The score is now ${score}:${opponentScore}`
+        `Your opponent overpowered you massively! Better luck next time! \n Your score is now: ${score} and your opponent's score is now: ${opponentScore}`
       );
     }
   }
